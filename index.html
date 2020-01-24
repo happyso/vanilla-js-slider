@@ -4,44 +4,92 @@
     <meta charset="UTF-8">
     <title>something</title>
     <style>
-        body {
+        html,body {
             position: relative;
             padding:0;
             margin:0;
-            height: 100vh;
-        }
-        h1,h4{margin:0;padding:0;}
-        .form,.greetings{
-            display: none;
-        }
-        .showing{
-            display: block;
-        }
-        .bgimg {
-            position: absolute;
-            top:0;
-            left:0;
-            width:100%;
             height: 100%;
-            z-index: -1;
+        }
+        .sliderContainer{
+            position: relative;
+    display: block;
+    overflow: hidden;
+    height: 100%;
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+            
+        }
+    
+        .sliderWrapper{
+            position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    transform: translate3d(0, 0, 0);
+            transition: .35s;
+            white-space: nowrap;
+            
+        }
+        .slide {
+        
+    float: left;
+    height: 100%;
+    min-height: 1px;
+    
+        }
+        .slide.slide-active{
+            display: block;
+            z-index: 1;
+        }
+
+
+        .slide span{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            color:#fff;
+        
         }
     </style>
 </head>
 <body>
-    <div class="js-clock">
-
-        <h1>00:00</h1>
-    </div>
-    <form class="js-form form">
-        <input type="text" placeholder="what is your name" />
-    </form>
-    <h4 class="js-greetings greetings"></h4>
-    <form class="js-toDoform">
-        <input type="text" placeholder="Write a to do" />
-    </form>
-    <div class="js-weather">
-        
-    </div>
     
+    <div class="sliderContainer">
+        <div class="sliderWrapper">
+            <div class="slide slide-active">
+                <span style="background-color: blueviolet;">1</span>
+            </div>
+            <div class="slide">
+                <span style="background-color:brown;">2</span style="background-color: blueviolet;">
+            </div>
+            <div class="slide">
+                <span style="background-color:burlywood;">3</span style="background-color: blueviolet;">
+            </div>
+            <div class="slide">
+                <span style="background-color:chocolate;">4</span style="background-color: blueviolet;">
+            </div>
+            <div class="slide">
+                <span style="background-color:darkcyan;">5</span style="background-color: blueviolet;">
+            </div>
+        </div>
+    </div>
+    <script src="slider.js"></script>
 </body>
 </html>
